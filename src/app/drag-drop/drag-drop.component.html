@@ -1,0 +1,49 @@
+
+ <div>
+    <div style="margin: 5px;width: 20vw; display: inline-block; border: 1px solid black;height:50vh">
+        <h3>List of Inspectors</h3>
+        <table border="1" >
+  
+            <tr>
+                <th>Inspectors Name</th>
+            </tr>
+            <tr *ngFor="let insptr of inspectiorList;  let i=index;" (drop)="drop($event, i)" (dragover)="onDragOver($event)" (dragend)="dragEnd()"   >
+          
+               <td>
+                {{insptr.name}} 
+               </td>
+            </tr>
+            </table>
+            
+    
+    </div>
+    <div style="margin: 5px;width: 75vw; display: inline-block;height: 50vh;border: 1px solid black;">
+        <h3>List of Inspections</h3>
+ 
+        <table border="1">       
+        
+            <tr>
+                <th>Inspection ID</th>
+                <th>Inspection Name</th>
+                <th>Inspection Type</th>
+                
+
+            </tr>
+            <tr *ngFor="let insption of inspectionList ; let i=index;"  [draggable]="true" (dragstart)="dragStartInspection($event,insption)" (dragleave)="onDragLeave($event)" >
+               <td>{{insption.id}}</td> 
+               <td>{{insption.name}}</td> 
+               <td>{{insption.inspection_type}}</td> 
+            </tr>
+            </table>
+    
+    </div>
+</div>
+
+
+<hr>
+<h3 style="background-color: lightblue;">List of Inspectors with associated Inspections</h3>
+    
+        
+    <div *ngFor="let inspt of inspectiorList" style=" border: 1px solid black;">
+    {{inspt|json}}
+    </div> 

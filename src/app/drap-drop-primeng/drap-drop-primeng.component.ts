@@ -1,15 +1,13 @@
-import { Component, OnInit } from '@angular/core';
-import { Inspection } from './models/inspection.model';
-import { Inspector } from './models/inspector.model';
+import { Component } from '@angular/core';
+import { Inspection } from '../models/inspection.model';
+import { Inspector } from '../models/inspector.model';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'],
+  selector: 'app-drap-drop-primeng',
+  templateUrl: './drap-drop-primeng.component.html',
+  styleUrls: ['./drap-drop-primeng.component.css']
 })
-export class AppComponent implements OnInit {
-  title = 'drag-drop-app';
-
+export class DrapDropPrimengComponent {
   inspectionList: Inspection[] = [
     {id :1, inspection_type:" Energy", name:"Boiler inspection"},
     {id :2, inspection_type:" Construction", name:"Building inspection"},
@@ -31,15 +29,7 @@ export class AppComponent implements OnInit {
   draggedInspection: Inspection | undefined |null;
 
   
-  ngOnInit(): void {
-    // for (let index = 1; index < 10; index++) {
-    //   this.inspectionList?.push({
-    //     inspection_type: 'Inpection_type' + index,
-    //     id: index,
-    //     name: 'Inspection' + index,
-    //   });
-    // }
-  }
+  ngOnInit(): void {   }
 
 
 
